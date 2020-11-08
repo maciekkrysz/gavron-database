@@ -44,3 +44,19 @@ INSERT INTO account( Id, Login, Password ) VALUES '', (''),
 '', (''),
 '', (''),
 '', ('');
+INSERT INTO pointtype( NameObjectType ) VALUES ('czlowiek'),
+('samochod'),
+('drzewo'),
+('budynek');
+INSERT INTO pointtype( NameObjectType ) VALUES ('czlowiek'),
+('samochod'),
+('drzewo'),
+('budynek');
+INSERT INTO pointtype( NameObjectType ) VALUES ('czlowiek'),
+('samochod'),
+('drzewo'),
+('budynek');
+INSERT INTO pointtype( NameObjectType ) VALUES ('czlowiek'),
+('samochod'),
+('drzewo'),
+('budynek');

@@ -1,5 +1,5 @@
 from utilitiees import addToFile
-
+import values
 
 class PointType():
     @staticmethod
@@ -12,4 +12,5 @@ class PointType():
         for row in data:
             listOfList.append([row])
 
+        values.POINTTYPE_LEN = len(data)
         addToFile.addToFile("pointtype", ["NamePointType"], listOfList)

@@ -12,19 +12,22 @@ from data_classes.flight import Flight
 from data_classes.log import Log
 from data_classes.flaw import Flaw
 from data_classes.object import Object
+import values
 
 
 def generate():
-    PointType.generate_all()
+    # PointType.generate_all()
+    print(values.OBJECTTYPE_LEN)
     ObjectType.generate_all()
+    print(values.OBJECTTYPE_LEN)
     # Drone.generate_all()
-    Role.generate_all()
+    # Role.generate_all()
 
     # Route.generate_all()
     # Point.generate_all()
     # PointOnRoute.generate_all()
 
-    Account.generate_all()
+    # Account.generate_all()
     # User.generate_all()
 
     # FlightSchedule.generate_all()

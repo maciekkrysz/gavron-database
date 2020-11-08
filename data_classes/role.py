@@ -1,4 +1,5 @@
 from utilitiees import addToFile
+import values
 
 
 class Role():
@@ -11,3 +12,5 @@ class Role():
         
         for row in data:
             listOfList.append([row])
+
+        values.ROLE_LEN = len(data)
