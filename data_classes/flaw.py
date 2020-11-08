@@ -1,20 +1,35 @@
 from data_classes.sql_abstract_class import SqlDataClass
+from utilitiees.pswd_generator import rand_string
+from utilitiees.addToFile import addToFile
+from values import *
+import random
+
 
 
 class Flaw(SqlDataClass):
 
-    __id = 0
+    __user = ""
+    __flight = ""
+    __drone = ""
+    __description = ""
 
-
-    def get_id(self):
-        return self.__id
-
-    def generate_sql(self):
-        pass
+    def generate_sql(self) -> str:
+        return [self.__user, self.__flight, self.__drone, self.__description]
 
     def generate_instance(self):
-        pass
+        self.__user = random.randint(1, USER_LEN)
+        self.__flight = random.randint(1, FLIGHT_LEN)
+        self.__drone = random.randint(1, ROLE_LEN)
+        self.__description = random.randint(1, ACCOUNT_LEN)
 
     @staticmethod
     def generate_all():
-        pass
+        values = []
+
+        instance = Flaw()
+        for i in range(FLAW_LEN):
+            instance.generate_instance()
+            sql_string = instance.generate_sql()
+            values.append(sql_string)
+
+        addToFile("flaw", ["User", "Flight", "Drone", "Description"], values)
