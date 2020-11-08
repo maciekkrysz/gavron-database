@@ -4,7 +4,7 @@ from utilitiees import addToFile
 class PointType():
     @staticmethod
     def generate_all():
-        data = open("./pointtype.txt", 'r').read().split(',')
+        data = open("pointtype.txt", 'r').read().split(',')
         data.pop()
 
         listOfList = []

@@ -1,5 +1,5 @@
 import random
 
-def rand_pswd(passlen):
+def rand_string(length):
     s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
-    return "".join(random.sample(s,passlen ))
+    return "".join(random.sample(s, length ))
