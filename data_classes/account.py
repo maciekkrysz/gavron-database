@@ -1,6 +1,7 @@
 from data_classes.sql_abstract_class import SqlDataClass
 from utilitiees.pswd_generator import rand_string
 from utilitiees.addToFile import addToFile
+from values import *
 
 import random
 
@@ -14,23 +15,20 @@ class Account(SqlDataClass):
 
     def generate_instance(self):
         login_length = random.randint(8, 15)
-        __login = rand_string(login_length)
+        self.__login = rand_string(login_length)
 
         passwd_length = random.randint(10, 20)
-        __passwd = rand_string(passwd_length)
+        self.__password = rand_string(passwd_length)
 
     @staticmethod
     def generate_all():
-        number_of_vals = 10
-        sql_string = ""
-
         values = []
 
         instance = Account()
-        for i in range(number_of_vals):
+        for i in range(ACCOUNT_LEN):
             instance.generate_instance()
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("account", ["Id", "Login", "Password"], values)
+        addToFile("account", ["Login", "Password"], values)
 
