@@ -5,6 +5,7 @@ from values import *
 
 import random
 
+
 class Account(SqlDataClass):
 
     __login = ""
@@ -31,4 +32,3 @@ class Account(SqlDataClass):
             values.append(sql_string)
 
         addToFile("account", ["Login", "Password"], values)
-

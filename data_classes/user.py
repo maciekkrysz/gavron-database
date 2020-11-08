@@ -15,8 +15,8 @@ class User(SqlDataClass):
         return [self.__account, self.__role]
 
     def generate_instance(self):
-        self.__role = random.randint(0, ROLE_LEN - 1)
-        self.__account = random.randint(0, ACCOUNT_LEN - 1)
+        self.__role = random.randint(1, ROLE_LEN)
+        self.__account = random.randint(1, ACCOUNT_LEN)
 
     @staticmethod
     def generate_all():

@@ -3,7 +3,7 @@ def addEntityDeclaration(entity, listOfAtributes):
     filepath = "plik.txt"
     file = open(filepath, "a", encoding="utf-8")
 
-    file.write("INSERT INTO " +entity + "( ")
+    file.write("INSERT INTO " + entity + "( ")
     for k in range(len(listOfAtributes)):
         if(k == len(listOfAtributes)-1):
             file.write(listOfAtributes[k] + "")
@@ -11,17 +11,19 @@ def addEntityDeclaration(entity, listOfAtributes):
             file.write(listOfAtributes[k] + ", ")
     file.write(" )" + " VALUES ")
 
+
 def addInstance(listOfValues):
 
     filepath = "plik.txt"
     file = open(filepath, "a", encoding="utf-8")
     file.write("(")
     for k in range(len(listOfValues)):
-        if(k == len(listOfValues) -1):
+        if(k == len(listOfValues) - 1):
             file.write("'"+str(listOfValues[k]) + "'")
         else:
             file.write("'"+str(listOfValues[k]) + "', ")
     file.write(")")
+
 
 def addToFile(entity, listOfAttributes, listOfAllValueLists):
     addEntityDeclaration(entity, listOfAttributes)
@@ -32,10 +34,12 @@ def addToFile(entity, listOfAttributes, listOfAllValueLists):
             addSeperator()
     lastSeperator()
 
+
 def addSeperator():
     filepath = "plik.txt"
     file = open(filepath, "a", encoding="utf-8")
     file.write(",\n")
+
 
 def lastSeperator():
     filepath = "plik.txt"

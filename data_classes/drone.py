@@ -2,6 +2,7 @@ from utilitiees import addToFile
 import random
 import values
 
+
 class Drone():
     @staticmethod
     def generate_all():
@@ -10,6 +11,6 @@ class Drone():
 
         listOfList = []
         for i in range(values.DRONE_LEN):
-            listOfList.append([data[random.randrange(0,values.DRONE_LEN-1)]])
-        
+            listOfList.append([data[random.randrange(1, values.DRONE_LEN)]])
+
         addToFile.addToFile("drone", ["ModelName"], listOfList)
