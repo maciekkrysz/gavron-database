@@ -1,21 +1,13 @@
-from data_classes.sql_abstract_class import SqlDataClass
+from utilitiees import addToFile
 
 
-class Drone(SqlDataClass):
-
-    __id = ""
-    __model_drone = ""
-
-    def get_id(self):
-        return self.__id
-
-    def generate_sql(self):
-        pass
-
-    def generate_instance(self):
-        pass
-
+class Role():
     @staticmethod
     def generate_all():
-        pass
+        data = open("drone.txt", 'r').read().split(',')
+        data.pop()
 
+        listOfList = []
+
+        for row in data:
+            listOfList.append([row])
