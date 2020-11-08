@@ -12,9 +12,10 @@ class ObjectType(SqlDataClass):
     def generate_all():
         pass
 
+    @staticmethod
     def read_from_file():
         data = open("../pointtype.txt",'r').read().split(',')
         data.pop()
         print(data)
 
-read_from_file()
+ObjectType.read_from_file()
