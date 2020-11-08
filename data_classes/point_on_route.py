@@ -8,3 +8,6 @@ class PointOnRoute(SqlDataClass):
     def generate_instance(self):
         pass
 
+    @staticmethod
+    def generate_all():
+        pass

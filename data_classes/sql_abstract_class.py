@@ -10,8 +10,7 @@ class SqlDataClass(ABC):
     def generate_sql(self):
         pass
 
-
     @staticmethod
     @abstractmethod
-    def generateAll():
+    def generate_all():
         pass
