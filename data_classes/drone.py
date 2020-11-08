@@ -10,6 +10,6 @@ class Drone():
 
         listOfList = []
         for i in range(values.DRONE_LEN):
-            listOfList.append(data[random.randrange(0,values.DRONE_LEN-1)])
+            listOfList.append([data[random.randrange(0,values.DRONE_LEN-1)]])
         
         addToFile.addToFile("drone", ["ModelName"], listOfList)
