@@ -13,4 +13,4 @@ class ObjectType():
             listOfList.append([row])
 
         values.OBJECTTYPE_LEN = len(data)
-        addToFile.addToFile("pointtype", ["NameObjectType"], listOfList)
+        addToFile.addToFile("objectype", ["NameObjectType"], listOfList)
