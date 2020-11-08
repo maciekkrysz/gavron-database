@@ -13,3 +13,4 @@ class ObjectType():
             listOfList.append([row])
 
         addToFile.addToFile("pointtype", ["NameObjectType"], listOfList)
+

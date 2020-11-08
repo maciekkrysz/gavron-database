@@ -9,9 +9,6 @@ class Account(SqlDataClass):
     __login = ""
     __password = ""
 
-    def get_id(self):
-        return self.__id
-
     def generate_sql(self) -> str:
         return [self.__login, self.__password]
 
