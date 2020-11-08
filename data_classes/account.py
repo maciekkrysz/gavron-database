@@ -21,7 +21,7 @@ class Account(SqlDataClass):
 
     @staticmethod
     def generate_all():
-        number_of_vals = random()
+        number_of_vals = 10
         sql_string = ""
 
         values = []
