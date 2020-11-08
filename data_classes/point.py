@@ -8,4 +8,4 @@ class Point():
         list = []
         for i in range(values.POINT_LEN):
             list.append([random.randrange(1,values.POINTTYPE_LEN-1),round(random.uniform(values.Wroclaw_Longitude-5,values.Wroclaw_Longitude+5),5),round(random.uniform(values.Wroclaw_Latitude-5,values.Wroclaw_Latitude+5),5)])
-        print(list)
+       
