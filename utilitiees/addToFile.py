@@ -15,9 +15,10 @@ def addInstance(listOfValues):
 
     filepath = "plik.txt"
     file = open(filepath, "a", encoding="utf-8")
+    file.write("(")
     for k in range(len(listOfValues)):
         if(k == len(listOfValues) -1):
-            file.write("('"+listOfValues[k] + "'")
+            file.write("'"+listOfValues[k] + "'")
         else:
             file.write("'"+listOfValues[k] + "', ")
     file.write(")")
