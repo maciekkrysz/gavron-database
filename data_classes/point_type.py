@@ -1,13 +1,13 @@
-from data_classes.sql_abstract_class import SqlDataClass
+from utilitiees import addToFile
 
 
-class PointType(SqlDataClass):
-    def generate_sql(self):
-        pass
-
-    def generate_instance(self):
-        pass
-
+class PointType():
     @staticmethod
     def generate_all():
-        pass
+        data = open("pointtype.txt", 'r').read().split(',')
+        data.pop()
+
+        listOfList = []
+
+        for row in data:
+            listOfList.append([row])
