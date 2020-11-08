@@ -1,13 +1,31 @@
 from data_classes.sql_abstract_class import SqlDataClass
+from utilitiees.pswd_generator import rand_string
+from utilitiees.addToFile import addToFile
+from values import *
 
+import random
 
 class Route(SqlDataClass):
-    def generate_sql(self):
-        pass
+
+    __description = ""
+
+    def generate_sql(self) -> str:
+        return [self.__description]
 
     def generate_instance(self):
-        pass
+        length = random.randint(10, 50)
+        self.__description = rand_string(length)
+
 
     @staticmethod
     def generate_all():
-        pass
+        values = []
+
+        instance = Route()
+        for i in range(ROUTE_LEN):
+            instance.generate_instance()
+            sql_string = instance.generate_sql()
+            values.append(sql_string)
+
+        addToFile("route", ["Description"], values)
+
