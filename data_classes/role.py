@@ -14,3 +14,4 @@ class Role():
             listOfList.append([row])
 
         values.ROLE_LEN = len(data)
+        addToFile.addToFile("role", ["RoleType"], listOfList)
