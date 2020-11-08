@@ -16,18 +16,16 @@ import values
 
 
 def generate():
-    # PointType.generate_all()
-    print(values.OBJECTTYPE_LEN)
+    PointType.generate_all()
     ObjectType.generate_all()
-    print(values.OBJECTTYPE_LEN)
-    # Drone.generate_all()
-    # Role.generate_all()
+    Drone.generate_all()
+    Role.generate_all()
 
     # Route.generate_all()
     # Point.generate_all()
     # PointOnRoute.generate_all()
 
-    # Account.generate_all()
+    Account.generate_all()
     # User.generate_all()
 
     # FlightSchedule.generate_all()
