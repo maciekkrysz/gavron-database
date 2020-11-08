@@ -15,24 +15,24 @@ from data_classes.object import Object
 
 
 def generate():
-    PointType.generate_all()
+    # PointType.generate_all()
     ObjectType.generate_all()
-    Drone.generate_all()
-    Role.generate_all()
+    # Drone.generate_all()
+    # Role.generate_all()
 
-    Route.generate_all()
-    Point.generate_all()
-    PointOnRoute.generate_all()
+    # Route.generate_all()
+    # Point.generate_all()
+    # PointOnRoute.generate_all()
 
-    Account.generate_all()
-    User.generate_all()
+    # Account.generate_all()
+    # User.generate_all()
 
-    FlightSchedule.generate_all()
-    Flight.generate_all()
-    Log.generate_all()
-    Flaw.generate_all()
+    # FlightSchedule.generate_all()
+    # Flight.generate_all()
+    # Log.generate_all()
+    # Flaw.generate_all()
 
-    Object.generate_all()
+    # Object.generate_all()
 
 
 if __name__ == "__main__":
