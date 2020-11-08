@@ -1,1 +1,1 @@
-n
+czlowiek,samochod,drzewo,budynek
