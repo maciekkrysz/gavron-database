@@ -1,4 +1,4 @@
-from data_classes.sql_abstract_class import SqlDataClass
+from sql_abstract_class import SqlDataClass
 
 
 class ObjectType(SqlDataClass):
@@ -11,3 +11,9 @@ class ObjectType(SqlDataClass):
     @staticmethod
     def generate_all():
         pass
+
+def read_from_file():
+    dane = open("../pointtype.txt",'r').read().split(',')
+    print(dane)
+
+read_from_file()
