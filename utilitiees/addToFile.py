@@ -18,11 +18,7 @@ def addInstance(listOfValues):
     file.write("(")
     for k in range(len(listOfValues)):
         if(k == len(listOfValues) -1):
-<<<<<<< HEAD
-            file.write("'"+listOfValues[k] + "'")
-=======
-            file.write("('"+str(listOfValues[k]) + "'")
->>>>>>> 6112e92... user
+            file.write("'"+str(listOfValues[k]) + "'")
         else:
             file.write("'"+str(listOfValues[k]) + "', ")
     file.write(")")
