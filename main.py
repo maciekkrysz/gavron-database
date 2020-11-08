@@ -1,8 +1,9 @@
+from data_classes import point_type, object_type
 
 
 def generate():
-    # doPointType()
-    # doObjType()
+    point_type.doPointType()
+    object_type.doObjType()
     # doDrone()
     # doRole()
 

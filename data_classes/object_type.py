@@ -1,0 +1,2 @@
+def doObjType():
+    pass
