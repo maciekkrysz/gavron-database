@@ -15,8 +15,8 @@ from data_classes.object import Object
 
 
 def generate():
-    # PointType.generate_all()
-    ObjectType.generate_all()
+    PointType.generate_all()
+    # ObjectType.generate_all()
     # Drone.generate_all()
     # Role.generate_all()
 

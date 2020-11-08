@@ -26,10 +26,10 @@ def addToFile(entity, listOfAttributes, listOfAllValueLists):
     addEntityDeclaration(entity, listOfAttributes)
 
     for index in range(len(listOfAllValueLists)):
-        addToFile.addInstance(listOfAllValueLists[index])
+        addInstance(listOfAllValueLists[index])
         if (index != len(listOfAllValueLists) - 1):
-            addToFile.addSeperator()
-    addToFile.lastSeperator()
+            addSeperator()
+    lastSeperator()
 
 def addSeperator():
     filepath = "plik.txt"

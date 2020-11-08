@@ -1,5 +1,4 @@
 from data_classes.sql_abstract_class import SqlDataClass
-from utilitiees import pswd_generator
 
 
 class Account(SqlDataClass):
@@ -30,5 +29,5 @@ class Account(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("account", [], values)
+        addToFile("account", ["Id", "Login", "Password"], values)
 
