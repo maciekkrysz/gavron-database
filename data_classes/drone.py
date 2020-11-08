@@ -1,13 +1,14 @@
 from utilitiees import addToFile
+import random
+import values
 
-
-class Role():
+class Drone():
     @staticmethod
     def generate_all():
         data = open("drone.txt", 'r').read().split(',')
         data.pop()
 
-        listOfList = []
-
-        for row in data:
-            listOfList.append([row])
+        list = []
+        for i in range(values.DRONE_LEN):
+            list.append(data[random.randrange(0,values.DRONE_LEN-1)])
+        
