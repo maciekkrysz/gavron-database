@@ -1,0 +1,1 @@
+DJI,DJI_mini_2,DJI_Mavic_air_2,Skydio,Yuneec,Mantis,Phantom,Typhoon,H620,H520,B200,B300,B400,B200,B600,B700,B1100,B9000,B10000,BJ20
