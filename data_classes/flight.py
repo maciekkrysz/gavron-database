@@ -33,7 +33,7 @@ class Flight(SqlDataClass):
             logslen = random.randint(100, 400)
             seconds = 0
             for j in range(logslen):
-                seconds += random.randint(5, 15)
+                seconds += random.randint(LOG_LEN * 0.80, LOG_LEN)
                 values_logs.append([i + 1, seconds, getRandDouble(Wroclaw_Longitude),
                                     getRandDouble(Wroclaw_Latitude), round(random.random() * 40, 2)])
 
