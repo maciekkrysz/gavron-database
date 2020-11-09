@@ -37,9 +37,9 @@ class Flight(SqlDataClass):
                 values_logs.append([i + 1, seconds, getRandDouble(Wroclaw_Longitude),
                                     getRandDouble(Wroclaw_Latitude), round(random.random() * 40, 2)])
 
-        addToFile("flight", ["Drone", "Flight schedule", "Start date"], values)
-        addToFile("logs", ["Flight", "Seconds from start",
-                           "Coord x", "Coord y", "Coord z"], values_logs)
+        addToFile("flight", ["Drone", "IdFlightSchedule", "StartDate"], values)
+        addToFile("logs", ["IdFlight", "SecondsSinceStart",
+                           "Longitude", "Latitude", "Altitude"], values_logs)
 
 
 def getRandDouble(coord):
