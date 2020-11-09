@@ -36,12 +36,12 @@ def addToFile(entity, listOfAttributes, listOfAllValueLists):
     file = open(SCRIPT_FILENAME, "a", encoding="utf-8")
 
     for index in range(len(listOfAllValueLists)):
-        if index % 2000 == 0:
-            file.write(';\n')
-            addEntityDeclaration(entity, listOfAttributes)
-
         addInstance(listOfAllValueLists[index])
-        if (index != len(listOfAllValueLists) - 1):
+        if index % 2000 == 0 and index > 0:
+            lastSeperator()
+            file.write('\n')
+            addEntityDeclaration(entity, listOfAttributes)
+        else:
             addSeperator()
     lastSeperator()
 
