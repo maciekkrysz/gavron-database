@@ -38,7 +38,7 @@ class Flight(SqlDataClass):
                                     getRandDouble(Wroclaw_Latitude), round(random.random() * 40, 2)])
 
         addToFile("flight", ["IdDrone", "IdFlightSchedule", "StartDate"], values)
-        addToFile("logs", ["IdFlight", "SecondsSinceStart",
+        addToFile("log", ["IdFlight", "SecondsSinceStart",
                            "Longitude", "Latitude", "Altitude"], values_logs)
 
 
