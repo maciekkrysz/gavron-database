@@ -20,7 +20,8 @@ class Flaw(SqlDataClass):
         self.__user = random.randint(1, USER_LEN)
         self.__flight = random.randint(1, FLIGHT_LEN)
         self.__drone = random.randint(1, ROLE_LEN)
-        self.__description = random.randint(1, ACCOUNT_LEN)
+        length = random.randint(10, 50)
+        self.__description = rand_string(length)
 
     @staticmethod
     def generate_all():

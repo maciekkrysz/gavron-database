@@ -23,7 +23,7 @@ class FlightSchedule(SqlDataClass):
 
         self.__id_route = random.randint(0, ROUTE_LEN)
 
-        self.__start_date = rand_date_in_range("01-01-2018", "31-12-2019")
+        self.__start_date = rand_date_in_range("01-11-2019", "31-12-2019")
 
         self.__start_minute = random.randint(0, 1440)
 
@@ -39,4 +39,5 @@ class FlightSchedule(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("flightschedule", ["IdUser", "IdRoute", "StartDate", "StartMinute", "Interval"], values)
+        addToFile("flightschedule", [
+                  "IdUser", "IdRoute", "StartDate", "StartMinute", "Interval"], values)
