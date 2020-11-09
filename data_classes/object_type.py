@@ -1,4 +1,4 @@
-from utilities import addToFile
+from utilities import sql_file_utils
 import values
 
 
@@ -13,4 +13,4 @@ class ObjectType():
             listOfList.append([row])
 
         values.OBJECTTYPE_LEN = len(data)
-        addToFile.addToFile("objectype", ["NameObjectType"], listOfList)
+        sql_file_utils.addToFile("objectype", ["NameObjectType"], listOfList)

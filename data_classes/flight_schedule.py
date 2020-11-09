@@ -1,6 +1,6 @@
 from data_classes.sql_abstract_class import SqlDataClass
 from utilities.generator_utils import rand_string, rand_date_in_range
-from utilities.addToFile import addToFile
+from utilities.sql_file_utils import addToFile
 from values import FLIGHTSCHEDULE_LEN, USER_LEN, ROUTE_LEN
 
 import random

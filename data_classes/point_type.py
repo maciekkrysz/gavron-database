@@ -1,4 +1,4 @@
-from utilities import addToFile
+from utilities import sql_file_utils
 import values
 
 class PointType():
@@ -13,4 +13,4 @@ class PointType():
             listOfList.append([row])
 
         values.POINTTYPE_LEN = len(data)
-        addToFile.addToFile("pointtype", ["NamePointType"], listOfList)
+        sql_file_utils.addToFile("pointtype", ["NamePointType"], listOfList)

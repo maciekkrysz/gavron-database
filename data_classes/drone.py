@@ -1,4 +1,4 @@
-from utilities import addToFile
+from utilities import sql_file_utils
 import random
 import values
 
@@ -13,4 +13,4 @@ class Drone():
         for _ in range(values.DRONE_LEN):
             listOfList.append([data[random.randrange(1, values.DRONE_LEN)]])
 
-        addToFile.addToFile("drone", ["ModelName"], listOfList)
+        sql_file_utils.addToFile("drone", ["ModelName"], listOfList)

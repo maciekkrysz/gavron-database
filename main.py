@@ -24,7 +24,7 @@ def generate():
 
     # Route.generate_all()
     # Point.generate_all()
-    # # PointOnRoute.generate_all()
+    PointOnRoute.generate_all()
 
     # Account.generate_all()
     # User.generate_all()
