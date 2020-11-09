@@ -1,7 +1,7 @@
 from data_classes.sql_abstract_class import SqlDataClass
-from utilitiees.pswd_generator import rand_string
-from utilitiees.addToFile import addToFile
-from values import *
+from utilities.generator_utils import rand_string
+from utilities.addToFile import addToFile
+from values import ROUTE_LEN
 
 import random
 
@@ -22,7 +22,7 @@ class Route(SqlDataClass):
         values = []
 
         instance = Route()
-        for i in range(ROUTE_LEN):
+        for _ in range(ROUTE_LEN):
             instance.generate_instance()
             sql_string = instance.generate_sql()
             values.append(sql_string)

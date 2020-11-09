@@ -1,4 +1,4 @@
-from utilitiees import addToFile
+from utilities import addToFile
 import values
 
 class PointType():

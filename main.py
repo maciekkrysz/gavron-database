@@ -12,8 +12,9 @@ from data_classes.flight import Flight
 from data_classes.log import Log
 from data_classes.flaw import Flaw
 from data_classes.object import Object
-import values
 
+from values import SCRIPT_FILENAME
+import os
 
 def generate():
     # PointType.generate_all()
@@ -28,7 +29,7 @@ def generate():
     # Account.generate_all()
     # User.generate_all()
 
-    # FlightSchedule.generate_all()
+    FlightSchedule.generate_all()
     # Flight.generate_all()
     # Log.generate_all()
     Flaw.generate_all()
@@ -37,4 +38,7 @@ def generate():
 
 
 if __name__ == "__main__":
+    if os.path.exists(SCRIPT_FILENAME):
+        os.remove(SCRIPT_FILENAME)
+
     generate()

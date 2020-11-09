@@ -1,6 +1,6 @@
 from data_classes.sql_abstract_class import SqlDataClass
-from utilitiees.pswd_generator import rand_string
-from utilitiees.addToFile import addToFile
+from utilities.generator_utils import rand_string
+from utilities.addToFile import addToFile
 from values import *
 
 

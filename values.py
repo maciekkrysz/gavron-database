@@ -12,5 +12,8 @@ POINTTYPE_LEN = 14
 ROLE_LEN = 3
 ROUTE_LEN = 10
 USER_LEN = 40
+
 Wroclaw_Longitude = 17
 Wroclaw_Latitude = 51
+
+SCRIPT_FILENAME = "plik.txt"

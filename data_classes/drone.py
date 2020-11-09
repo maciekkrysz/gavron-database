@@ -1,4 +1,4 @@
-from utilitiees import addToFile
+from utilities import addToFile
 import random
 import values
 
@@ -10,7 +10,7 @@ class Drone():
         data.pop()
 
         listOfList = []
-        for i in range(values.DRONE_LEN):
+        for _ in range(values.DRONE_LEN):
             listOfList.append([data[random.randrange(1, values.DRONE_LEN)]])
 
         addToFile.addToFile("drone", ["ModelName"], listOfList)
