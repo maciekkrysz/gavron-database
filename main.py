@@ -34,7 +34,7 @@ def generate():
     # Log.generate_all()
     Flaw.generate_all()
 
-    # Object.generate_all()
+    Object.generate_all()
 
 
 if __name__ == "__main__":

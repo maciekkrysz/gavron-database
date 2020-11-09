@@ -10,4 +10,4 @@ class Object():
             link = "/" + str(random.randrange(1,10000)) + "." + str(random.randrange(1000,10000))
             list.append([random.randrange(1,values.FLIGHT_LEN),random.randrange(1,values.OBJECTTYPE_LEN),link])
 
-        sql_file_utilis.addToFile("object",["IdFlight","IdObjectType","PathToPhoto"],list)
+        sql_file_utils.addToFile("object",["IdFlight","IdObjectType","PathToPhoto"],list)
