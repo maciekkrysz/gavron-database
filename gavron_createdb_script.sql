@@ -89,8 +89,7 @@ CREATE TABLE `pointonroute` (
   `IdRoute` int(10) NOT NULL AUTO_INCREMENT,
   `IdPoint` int(10) NOT NULL,
   `Order_` int(10) DEFAULT NULL,
-  PRIMARY KEY (`IdRoute`,`IdPoint`),
-  KEY `IdPoint` (`IdPoint`)
+  PRIMARY KEY (`IdRoute`,`IdPoint`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `pointtype` (
@@ -142,10 +141,6 @@ ALTER TABLE `object`
 
 ALTER TABLE `point`
   ADD CONSTRAINT `point_ibfk_1` FOREIGN KEY (`IdPointType`) REFERENCES `pointtype` (`Id`);
-
-ALTER TABLE `pointonroute`
-  ADD CONSTRAINT `pointonroute_ibfk_1` FOREIGN KEY (`IdPoint`) REFERENCES `point` (`Id`),
-  ADD CONSTRAINT `pointonroute_ibfk_2` FOREIGN KEY (`IdRoute`) REFERENCES `route` (`Id`);
 
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`IdRole`) REFERENCES `role` (`Id`),

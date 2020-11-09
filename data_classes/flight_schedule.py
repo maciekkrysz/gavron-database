@@ -19,9 +19,9 @@ class FlightSchedule(SqlDataClass):
         return [self.__id_user, self.__id_route, self.__start_date, self.__start_minute, self.__interval]
 
     def generate_instance(self):
-        self.__id_user = random.randint(0, USER_LEN)
+        self.__id_user = random.randint(1, USER_LEN)
 
-        self.__id_route = random.randint(0, ROUTE_LEN)
+        self.__id_route = random.randint(1, ROUTE_LEN)
 
         self.__start_date = rand_date_in_range("01-11-2019", "31-12-2019")
 
