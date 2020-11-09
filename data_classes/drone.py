@@ -11,6 +11,6 @@ class Drone():
 
         listOfList = []
         for _ in range(values.DRONE_LEN):
-            listOfList.append([data[random.randrange(1, values.DRONE_LEN)]])
+            listOfList.append([data[random.randrange(0, len(data))]])
 
         sql_file_utils.addToFile("drone", ["Model"], listOfList)

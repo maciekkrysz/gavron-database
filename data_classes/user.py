@@ -23,7 +23,7 @@ class User(SqlDataClass):
 
         instance = User()
         
-        for i in range(1, USER_LEN):
+        for i in range(1, USER_LEN + 1):
             instance.__account = i
 
             instance.generate_instance()
