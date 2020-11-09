@@ -26,14 +26,18 @@ class PointOnRoute(SqlDataClass):
         instance = PointOnRoute()
 
         for i in range(1, ROUTE_LEN):
-            route_length = random.randint(3, 20)
+            route_length = random.randint(3, 8)
             instance.__order = 0
             instance.__id_route = i
+
+            curr_route = []
             for _ in range(1, route_length):
-                instance.generate_instance()
+                instance.__id_point = random.randint(1, POINT_LEN)
+
                 sql_string = instance.generate_sql()
                 values.append(sql_string)
 
+                curr_route.append(instance.__id_point)
                 instance.__order = instance.__order + 1
             
             instance.__id_route = instance.__id_route + 1

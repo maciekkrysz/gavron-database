@@ -25,15 +25,15 @@ class Flight(SqlDataClass):
         values_logs = []
 
         instance = Flight()
-        for i in range(USER_LEN):
+        for i in range(FLIGHT_LEN):
             instance.generate_instance()
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-            logslen = random.randint(100, 400)
+            logslen = random.randint(LOG_LEN * 0.80, LOG_LEN)
             seconds = 0
             for j in range(logslen):
-                seconds += random.randint(LOG_LEN * 0.80, LOG_LEN)
+                seconds += random.randint(5, 15)
                 values_logs.append([i + 1, seconds, getRandDouble(Wroclaw_Longitude),
                                     getRandDouble(Wroclaw_Latitude), round(random.random() * 40, 2)])
 

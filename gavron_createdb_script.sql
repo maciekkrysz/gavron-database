@@ -89,7 +89,7 @@ CREATE TABLE `pointonroute` (
   `IdRoute` int(10) NOT NULL AUTO_INCREMENT,
   `IdPoint` int(10) NOT NULL,
   `Order_` int(10) DEFAULT NULL,
-  PRIMARY KEY (`IdRoute`,`IdPoint`)
+  PRIMARY KEY (`IdRoute`,`IdPoint`, `Order_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `pointtype` (
