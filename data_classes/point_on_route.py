@@ -26,7 +26,7 @@ class PointOnRoute(SqlDataClass):
         instance = PointOnRoute()
 
         for i in range(1, ROUTE_LEN):
-            route_length = random.randint(3, 8)
+            route_length = random.randint(3, 20)
             instance.__order = 0
             instance.__id_route = i
 
