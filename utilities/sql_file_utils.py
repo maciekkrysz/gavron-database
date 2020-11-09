@@ -13,6 +13,7 @@ def addEntityDeclaration(entity, listOfAtributes):
         else:
             file.write(listOfAtributes[k] + ", ")
     file.write(" )" + " VALUES ")
+    file.close()
 
 
 def addInstance(listOfValues):
@@ -26,6 +27,7 @@ def addInstance(listOfValues):
         else:
             file.write("'"+str(listOfValues[k]) + "', ")
     file.write(")")
+    file.close()
 
 
 def addToFile(entity, listOfAttributes, listOfAllValueLists):
@@ -36,6 +38,10 @@ def addToFile(entity, listOfAttributes, listOfAllValueLists):
         if (index != len(listOfAllValueLists) - 1):
             addSeperator()
     lastSeperator()
+
+    file = open(SCRIPT_FILENAME, "a", encoding="utf-8")
+    file.write("\n")
+    file.close()
 
 
 def addSeperator():
