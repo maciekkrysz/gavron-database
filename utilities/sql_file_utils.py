@@ -39,9 +39,8 @@ def addToFile(entity, listOfAttributes, listOfAllValueLists):
         addInstance(listOfAllValueLists[index])
         if index % 2000 == 0 and index > 0:
             lastSeperator()
-            file.write('\n')
             addEntityDeclaration(entity, listOfAttributes)
-        else:
+        elif(index != len(listOfAllValueLists) - 1):
             addSeperator()
     lastSeperator()
 
