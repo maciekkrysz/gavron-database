@@ -8,22 +8,24 @@ import random
 
 class User(SqlDataClass):
 
-    __account = ""
-    __role = ""
+    __account = 0
+    __role = 0
 
     def generate_sql(self) -> str:
         return [self.__account, self.__role]
 
     def generate_instance(self):
         self.__role = random.randint(1, ROLE_LEN)
-        self.__account = random.randint(1, ACCOUNT_LEN)
 
     @staticmethod
     def generate_all():
         values = []
 
         instance = User()
-        for i in range(USER_LEN):
+        
+        for i in range(1, USER_LEN):
+            instance.__account = i
+
             instance.generate_instance()
             sql_string = instance.generate_sql()
             values.append(sql_string)

@@ -40,4 +40,4 @@ class FlightSchedule(SqlDataClass):
             values.append(sql_string)
 
         addToFile("flightschedule", [
-                  "IdUser", "IdRoute", "StartDate", "StartMinute", "Interval"], values)
+                  "IdUser", "IdRoute", "StartDate", "StartMinute", "Interval_"], values)
