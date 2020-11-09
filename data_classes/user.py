@@ -28,4 +28,4 @@ class User(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("user", ["Account", "Role"], values)
+        addToFile("user", ["IdAccount", "IdRole"], values)

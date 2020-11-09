@@ -13,4 +13,4 @@ class ObjectType():
             listOfList.append([row])
 
         values.OBJECTTYPE_LEN = len(data)
-        sql_file_utils.addToFile("objectype", ["Name"], listOfList)
+        sql_file_utils.addToFile("objecttype", ["Name"], listOfList)

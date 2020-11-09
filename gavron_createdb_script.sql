@@ -107,7 +107,7 @@ CREATE TABLE `role` (
 
 CREATE TABLE `route` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
-  `NameRoute` varchar(50) NOT NULL,
+  `Description` varchar(50) NOT NULL,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
