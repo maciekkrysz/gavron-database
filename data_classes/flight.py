@@ -5,6 +5,7 @@ from values import *
 
 import random
 
+
 class Flight(SqlDataClass):
     __drone = ""
     __flight_schedule = ""
@@ -21,6 +22,7 @@ class Flight(SqlDataClass):
     @staticmethod
     def generate_all():
         values = []
+        values_logs = []
 
         instance = Flight()
         for i in range(USER_LEN):
@@ -28,4 +30,17 @@ class Flight(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
+            logslen = random.randint(100, 400)
+            seconds = 0
+            for j in range(logslen):
+                seconds += random.randint(5, 15)
+                values_logs.append([i + 1, seconds, getRandDouble(Wroclaw_Longitude),
+                                    getRandDouble(Wroclaw_Latitude), round(random.random() * 40, 2)])
+
         addToFile("flight", ["Drone", "Flight schedule", "Start date"], values)
+        addToFile("logs", ["Flight", "Seconds from start",
+                           "Coord x", "Coord y", "Coord z"], values_logs)
+
+
+def getRandDouble(coord):
+    return round(random.uniform(coord-1, coord+1), 5)
