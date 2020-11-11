@@ -19,23 +19,23 @@ from values import SCRIPT_FILENAME
 import os
 
 def generate():
-    PointType.generate_all(cursor)
-    ObjectType.generate_all(cursor)
-    Drone.generate_all(cursor)
+    # PointType.generate_all(cursor)
+    # ObjectType.generate_all(cursor)
+    # Drone.generate_all(cursor)
     Role.generate_all(cursor)
-    Route.generate_all(cursor)
-    Point.generate_all(cursor)
+    # Route.generate_all(cursor)
+    # Point.generate_all(cursor)
     # PointOnRoute.generate_all(cursor)
     # conn.commit()
 
     Account.generate_all(cursor)
     User.generate_all(cursor)
 
-    FlightSchedule.generate_all(cursor)
-    Flight.generate_all(cursor)
-    Flaw.generate_all(cursor)
+    # FlightSchedule.generate_all(cursor)
+    # Flight.generate_all(cursor)
+    # Flaw.generate_all(cursor)
 
-    Object.generate_all(cursor)
+    # Object.generate_all(cursor)
 
 
 if __name__ == "__main__":

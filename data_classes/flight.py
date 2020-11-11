@@ -22,7 +22,6 @@ class Flight(SqlDataClass):
     @staticmethod
     def generate_all(cursor):
         values = []
-        values_logs = []
 
         instance = Flight()
         for i in range(FLIGHT_LEN):
@@ -30,18 +29,6 @@ class Flight(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-            logslen = random.randint(LOG_LEN * 0.80, LOG_LEN)
-            seconds = 0
-            for j in range(logslen):
-                seconds += random.randint(5, 15)
-                values_logs.append([i + 1, seconds, getRandDouble(Wroclaw_Longitude),
-                                    getRandDouble(Wroclaw_Latitude), round(random.random() * 40, 2)])
 
         addToFile(cursor, "flight", ["IdDrone",
                                      "IdFlightSchedule", "StartDate"], values)
-        addToFile(cursor, "log", ["IdFlight", "SecondsSinceStart",
-                                  "Longitude", "Latitude", "Altitude"], values_logs)
-
-
-def getRandDouble(coord):
-    return round(random.uniform(coord-1, coord+1), 5)
