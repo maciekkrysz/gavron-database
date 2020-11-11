@@ -103,7 +103,7 @@ CREATE TABLE `pointtype` (
 
 CREATE TABLE `role` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `NameRole` varchar(50) NOT NUL UNIQUEL,
+  `NameRole` varchar(50) NOT NULL UNIQUE,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
