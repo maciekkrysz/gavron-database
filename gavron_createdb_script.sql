@@ -75,8 +75,8 @@ CREATE TABLE `object` (
 
 CREATE TABLE `objecttype` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(50) NOT NULL,
-  PRIMARY KEY (Id, Name)
+  `Name` varchar(50) NOT NULL UNIQUE,
+  PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `point` (
@@ -97,13 +97,13 @@ CREATE TABLE `pointonroute` (
 
 CREATE TABLE `pointtype` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
-  `NamePointType` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (Id, NamePointType)
+  `NamePointType` varchar(50) NOT NULL UNIQUE,
+  PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `role` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `NameRole` varchar(50) NOT NULL,
+  `NameRole` varchar(50) NOT NUL UNIQUEL,
   PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
