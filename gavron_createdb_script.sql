@@ -76,7 +76,7 @@ CREATE TABLE `object` (
 CREATE TABLE `objecttype` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL,
-  PRIMARY KEY (Id)
+  PRIMARY KEY (Id, Name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `point` (
