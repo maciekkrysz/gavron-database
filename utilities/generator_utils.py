@@ -6,7 +6,7 @@ def rand_string(length):
     return "".join(random.sample(s, length ))
 
 def rand_date_in_range(start_date: str, end_date: str):
-    format = '%d-%m-%Y'
+    format = '%Y-%m-%d'
 
     start_time = time.mktime(time.strptime(start_date, format))
     end_time = time.mktime(time.strptime(end_date, format))

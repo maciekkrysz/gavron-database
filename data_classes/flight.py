@@ -17,7 +17,7 @@ class Flight(SqlDataClass):
     def generate_instance(self):
         self.__drone = random.randint(1, DRONE_LEN)
         self.__flight_schedule = random.randint(1, FLIGHTSCHEDULE_LEN)
-        self.__start_date = rand_date_in_range("01-01-2020", "09-11-2020")
+        self.__start_date = rand_date_in_range("2020-01-01", "2020-09-11")
 
     @staticmethod
     def generate_all():

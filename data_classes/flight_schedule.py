@@ -23,7 +23,7 @@ class FlightSchedule(SqlDataClass):
 
         self.__id_route = random.randint(1, ROUTE_LEN)
 
-        self.__start_date = rand_date_in_range("01-11-2019", "31-12-2019")
+        self.__start_date = rand_date_in_range("2019-11-01", "2019-12-31")
 
         self.__start_minute = random.randint(0, 1440)
 

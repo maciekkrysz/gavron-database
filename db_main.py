@@ -13,11 +13,14 @@ conn = pymysql.connect(host='localhost',
 
 cursor = conn.cursor()
 # some other statements  with the help of cursor
-retrive = "Select * from flight"
+retrive = "SELECT COUNT(*) FROM flight; "
 cursor.execute(retrive)
-rows = cursor.fetchall()
-for row in rows:
-   print(row)
+row = cursor.fetchall()[0]
+
+print(row)
+thisdict = list(row.values())[0]
+print(thisdict) # print count of flight rows
+#    print(row['Count(*)'])
 
 
 conn.close()
