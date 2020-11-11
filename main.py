@@ -14,7 +14,7 @@ from data_classes.flaw import Flaw
 from data_classes.object import Object
 
 from utilities.db_connection import conn, cursor
-from utilities.db_conn_utilities import drop_database
+from utilities.db_conn_utilities import drop_database, get_all_index
 from values import SCRIPT_FILENAME
 import os
 
@@ -31,8 +31,8 @@ def generate():
     conn.commit()
     Point.generate_all(cursor)
     conn.commit()
-    PointOnRoute.generate_all(cursor)
-    conn.commit()
+    # PointOnRoute.generate_all(cursor)
+    # conn.commit()
 
     Account.generate_all(cursor)
     conn.commit()
@@ -55,7 +55,8 @@ if __name__ == "__main__":
     if os.path.exists(SCRIPT_FILENAME):
         os.remove(SCRIPT_FILENAME)
     # drop_database(cursor)
-    generate()
+    # generate()
+    print(get_all_index(cursor, 'flight'))
     conn.commit()
     conn.close()
 

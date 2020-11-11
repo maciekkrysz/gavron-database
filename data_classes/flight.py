@@ -39,8 +39,8 @@ class Flight(SqlDataClass):
 
         addToFile(cursor, "flight", ["IdDrone",
                                      "IdFlightSchedule", "StartDate"], values)
-        # addToFile(cursor, "log", ["IdFlight", "SecondsSinceStart",
-        #                           "Longitude", "Latitude", "Altitude"], values_logs)
+        addToFile(cursor, "log", ["IdFlight", "SecondsSinceStart",
+                                  "Longitude", "Latitude", "Altitude"], values_logs)
 
 
 def getRandDouble(coord):
