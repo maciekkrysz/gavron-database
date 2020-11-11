@@ -98,7 +98,7 @@ CREATE TABLE `pointonroute` (
 CREATE TABLE `pointtype` (
   `Id` int(10) NOT NULL AUTO_INCREMENT,
   `NamePointType` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (Id)
+  PRIMARY KEY (Id, NamePointType)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `role` (
