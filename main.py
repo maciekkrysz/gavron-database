@@ -18,6 +18,7 @@ from utilities.db_conn_utilities import drop_database, get_all_index
 from values import SCRIPT_FILENAME
 import os
 
+
 def generate():
     PointType.generate_all(cursor)
     ObjectType.generate_all(cursor)
@@ -33,8 +34,9 @@ def generate():
     FlightSchedule.generate_all(cursor)
     Flight.generate_all(cursor)
     Flaw.generate_all(cursor)
+    Log.generate_all(cursor)
 
-    # Object.generate_all(cursor)
+    Object.generate_all(cursor)
 
 
 if __name__ == "__main__":
@@ -44,4 +46,3 @@ if __name__ == "__main__":
     generate()
     conn.commit()
     conn.close()
-
