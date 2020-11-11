@@ -20,43 +20,29 @@ import os
 
 def generate():
     PointType.generate_all(cursor)
-    conn.commit()
     ObjectType.generate_all(cursor)
-    conn.commit()
     Drone.generate_all(cursor)
-    conn.commit()
     Role.generate_all(cursor)
-    conn.commit()
     Route.generate_all(cursor)
-    conn.commit()
     Point.generate_all(cursor)
-    conn.commit()
     # PointOnRoute.generate_all(cursor)
     # conn.commit()
 
     Account.generate_all(cursor)
-    conn.commit()
     User.generate_all(cursor)
 
-    conn.commit()
     FlightSchedule.generate_all(cursor)
-    conn.commit()
     Flight.generate_all(cursor)
-    conn.commit()
-
     Flaw.generate_all(cursor)
-    conn.commit()
 
     Object.generate_all(cursor)
-    conn.commit()
 
 
 if __name__ == "__main__":
     if os.path.exists(SCRIPT_FILENAME):
         os.remove(SCRIPT_FILENAME)
     # drop_database(cursor)
-    # generate()
-    print(get_all_index(cursor, 'flight'))
+    generate()
     conn.commit()
     conn.close()
 
