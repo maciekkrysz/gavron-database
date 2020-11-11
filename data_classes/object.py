@@ -4,7 +4,7 @@ import random
 
 class Object():
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         list = []
         for i in range(values.OBJECT_LEN):
             link = "/" + str(random.randrange(1,10000)) + "." + str(random.randrange(1000,10000)) + ".png"

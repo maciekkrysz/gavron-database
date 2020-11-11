@@ -24,7 +24,7 @@ class Flaw(SqlDataClass):
         self.__description = rand_string(length)
 
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
 
         instance = Flaw()

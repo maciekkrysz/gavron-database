@@ -30,7 +30,7 @@ class FlightSchedule(SqlDataClass):
         self.__interval = random.randrange(60, 43200, 60)
 
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
 
         instance = FlightSchedule()

@@ -20,7 +20,7 @@ class Flight(SqlDataClass):
         self.__start_date = rand_date_in_range("2020-01-01", "2020-09-11")
 
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
         values_logs = []
 

@@ -4,7 +4,7 @@ import values
 
 class ObjectType():
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         data = open("objecttype.txt", 'r').read().split(',')
         data.pop()
         listOfList = []
@@ -13,4 +13,5 @@ class ObjectType():
             listOfList.append([row])
 
         values.OBJECTTYPE_LEN = len(data)
-        sql_file_utils.addToFile("objecttype", ["Name"], listOfList)
+        s = sql_file_utils.addToFile("objecttype", ["Name"], listOfList)
+        return s

@@ -3,7 +3,7 @@ import values
 
 class PointType():
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         data = open("pointtype.txt", 'r').read().split(',')
         data.pop()
 
@@ -13,4 +13,6 @@ class PointType():
             listOfList.append([row])
 
         values.POINTTYPE_LEN = len(data)
-        sql_file_utils.addToFile("pointtype", ["NamePointType"], listOfList)
+        s = sql_file_utils.addToFile("pointtype", ["NamePointType"], listOfList)
+        return s
+

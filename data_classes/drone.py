@@ -3,7 +3,7 @@ import random
 import values
 
 
-class Drone():
+class Drone(cursor):
     @staticmethod
     def generate_all():
         data = open("drone.txt", 'r').read().split(',')

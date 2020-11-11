@@ -13,31 +13,35 @@ from data_classes.log import Log
 from data_classes.flaw import Flaw
 from data_classes.object import Object
 
+from utilities.db_connection import conn, cursor
+from utilities.db_conn_utilities import update_values, drop_database
 from values import SCRIPT_FILENAME
 import os
 
 def generate():
-    PointType.generate_all()
-    ObjectType.generate_all()
-    Drone.generate_all()
-    Role.generate_all()
+    s = PointType.generate_all(cursor)
+    s = ObjectType.generate_all(cursor)
+    # Drone.generate_all(cursor)
+    # Role.generate_all(cursor)
+    # Flaw.generate_all(cursor)
 
-    Route.generate_all()
-    Point.generate_all()
-    PointOnRoute.generate_all()
+    # Route.generate_all(cursor)
+    # Point.generate_all(cursor)
+    # PointOnRoute.generate_all(cursor)
 
-    Account.generate_all()
-    User.generate_all()
+    # Account.generate_all(cursor)
+    # User.generate_all(cursor)
 
-    FlightSchedule.generate_all()
-    Flight.generate_all()
-    Flaw.generate_all()
+    # FlightSchedule.generate_all(cursor)
+    # Flight.generate_all(cursor)
 
-    Object.generate_all()
+    # Object.generate_all(cursor)
 
 
 if __name__ == "__main__":
     if os.path.exists(SCRIPT_FILENAME):
         os.remove(SCRIPT_FILENAME)
-
+    # drop_database(cursor)
     generate()
+    conn.close()
+

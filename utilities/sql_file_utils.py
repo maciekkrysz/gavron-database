@@ -2,59 +2,48 @@ from values import SCRIPT_FILENAME
 
 
 def addEntityDeclaration(entity, listOfAtributes):
+    ret_str = ""
 
-    filepath = SCRIPT_FILENAME
-    file = open(filepath, "a", encoding="utf-8")
-
-    file.write("INSERT INTO " + entity + "( ")
+    ret_str += "INSERT INTO " + entity + "( "
     for k in range(len(listOfAtributes)):
         if(k == len(listOfAtributes)-1):
-            file.write(listOfAtributes[k] + "")
+            ret_str += listOfAtributes[k] + ""
         else:
-            file.write(listOfAtributes[k] + ", ")
-    file.write(" )" + " VALUES ")
-    file.close()
+            ret_str += listOfAtributes[k] + ", "
+    ret_str += " )" + " VALUES "
+    return ret_str
 
 
 def addInstance(listOfValues):
-
-    filepath = SCRIPT_FILENAME
-    file = open(filepath, "a", encoding="utf-8")
-    file.write("(")
+    ret_str = ""
+    ret_str += '('
     for k in range(len(listOfValues)):
         if(k == len(listOfValues) - 1):
-            file.write("'"+str(listOfValues[k]) + "'")
+            ret_str += "'" + str(listOfValues[k]) + "'"
         else:
-            file.write("'"+str(listOfValues[k]) + "', ")
-    file.write(")")
-    file.close()
+            ret_str += "'" + str(listOfValues[k]) + "', "
+    ret_str += ')'
+    return ret_str
 
 
 def addToFile(entity, listOfAttributes, listOfAllValueLists):
-    addEntityDeclaration(entity, listOfAttributes)
-
-    file = open(SCRIPT_FILENAME, "a", encoding="utf-8")
+    ret_str = ""
+    ret_str += addEntityDeclaration(entity, listOfAttributes)
 
     for index in range(len(listOfAllValueLists)):
-        addInstance(listOfAllValueLists[index])
+        ret_str += addInstance(listOfAllValueLists[index])
         if index % 2000 == 0 and index > 0:
-            lastSeperator()
-            addEntityDeclaration(entity, listOfAttributes)
+            ret_str += lastSeperator()
+            ret_str += addEntityDeclaration(entity, listOfAttributes)
         elif(index != len(listOfAllValueLists) - 1):
-            addSeperator()
-    lastSeperator()
-
-    file.write("\n")
-    file.close()
+            ret_str += addSeperator()
+    ret_str += lastSeperator()
+    return ret_str
 
 
 def addSeperator():
-    filepath = SCRIPT_FILENAME
-    file = open(filepath, "a", encoding="utf-8")
-    file.write(",\n")
+    return ',\n'
 
 
 def lastSeperator():
-    filepath = SCRIPT_FILENAME
-    file = open(filepath, "a", encoding="utf-8")
-    file.write(";\n")
+    return ';'

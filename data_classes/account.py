@@ -22,7 +22,7 @@ class Account(SqlDataClass):
         self.__password = rand_string(passwd_length)
 
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
 
         instance = Account()

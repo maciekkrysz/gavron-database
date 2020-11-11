@@ -20,7 +20,7 @@ class PointOnRoute(SqlDataClass):
         self.__id_point = random.randint(1, POINT_LEN)
 
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
 
         instance = PointOnRoute()
