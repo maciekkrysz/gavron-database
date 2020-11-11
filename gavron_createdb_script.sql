@@ -42,7 +42,7 @@ CREATE TABLE `flightschedule` (
   `IdUser` int(11) NOT NULL,
   `IdRoute` int(11) NOT NULL,
   `StartDate` date NOT NULL,
-  `StartMinute` time NOT NULL,
+  `StartMinute` int NOT NULL,
   `Interval_` int(11) NOT NULL,
   PRIMARY KEY (Id),
   KEY `IdUser` (`IdUser`),
