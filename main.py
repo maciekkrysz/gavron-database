@@ -31,8 +31,8 @@ def generate():
     User.generate_all(cursor)
 
     FlightSchedule.generate_all(cursor)
-    # Flight.generate_all(cursor)
-    # Flaw.generate_all(cursor)
+    Flight.generate_all(cursor)
+    Flaw.generate_all(cursor)
 
     # Object.generate_all(cursor)
 
