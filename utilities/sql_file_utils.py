@@ -1,10 +1,11 @@
 from values import SCRIPT_FILENAME
 
 
-def addEntityDeclaration(entity, listOfAtributes):
-    ret_str = ""
-
-    ret_str += "INSERT INTO " + entity + "( "
+def addEntityDeclaration(entity, listOfAtributes, ignore):
+    ret_str = "INSERT "
+    if ignore:
+        ret_str += "IGNORE "
+    ret_str += "INTO " + entity + "( "
     for k in range(len(listOfAtributes)):
         if(k == len(listOfAtributes)-1):
             ret_str += listOfAtributes[k] + ""
@@ -26,18 +27,20 @@ def addInstance(listOfValues):
     return ret_str
 
 
-def addToFile(entity, listOfAttributes, listOfAllValueLists):
+def addToFile(cursor, entity, listOfAttributes, listOfAllValueLists, ignore=False):
     ret_str = ""
-    ret_str += addEntityDeclaration(entity, listOfAttributes)
+    ret_str += addEntityDeclaration(entity, listOfAttributes, ignore)
 
     for index in range(len(listOfAllValueLists)):
         ret_str += addInstance(listOfAllValueLists[index])
         if index % 2000 == 0 and index > 0:
             ret_str += lastSeperator()
-            ret_str += addEntityDeclaration(entity, listOfAttributes)
+            cursor.execute(ret_str)
+            ret_str = addEntityDeclaration(entity, listOfAttributes, ignore)
         elif(index != len(listOfAllValueLists) - 1):
             ret_str += addSeperator()
     ret_str += lastSeperator()
+    cursor.execute(ret_str)
     return ret_str
 
 

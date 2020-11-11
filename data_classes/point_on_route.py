@@ -12,7 +12,6 @@ class PointOnRoute(SqlDataClass):
     __id_point = 0
     __order = 0
 
-    
     def generate_sql(self) -> str:
         return [self.__id_route, self.__id_point, self.__order]
 
@@ -26,7 +25,7 @@ class PointOnRoute(SqlDataClass):
         instance = PointOnRoute()
 
         for i in range(1, ROUTE_LEN):
-            route_length = random.randint(3, 20)
+            route_length = random.randint(3, 10)
             instance.__order = 0
             instance.__id_route = i
 
@@ -39,7 +38,7 @@ class PointOnRoute(SqlDataClass):
 
                 curr_route.append(instance.__id_point)
                 instance.__order = instance.__order + 1
-            
-            instance.__id_route = instance.__id_route + 1
 
-        addToFile("pointonroute", ["IdRoute", "IdPoint", "Order_"], values)
+            instance.__id_route = instance.__id_route + 1
+        addToFile(cursor, "pointonroute", [
+                  "IdRoute", "IdPoint", "Order_"], values)

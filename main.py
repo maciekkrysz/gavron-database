@@ -14,28 +14,41 @@ from data_classes.flaw import Flaw
 from data_classes.object import Object
 
 from utilities.db_connection import conn, cursor
-from utilities.db_conn_utilities import update_values, drop_database
+from utilities.db_conn_utilities import drop_database
 from values import SCRIPT_FILENAME
 import os
 
 def generate():
-    s = PointType.generate_all(cursor)
-    s = ObjectType.generate_all(cursor)
-    # Drone.generate_all(cursor)
-    # Role.generate_all(cursor)
-    # Flaw.generate_all(cursor)
+    PointType.generate_all(cursor)
+    conn.commit()
+    ObjectType.generate_all(cursor)
+    conn.commit()
+    Drone.generate_all(cursor)
+    conn.commit()
+    Role.generate_all(cursor)
+    conn.commit()
+    Route.generate_all(cursor)
+    conn.commit()
+    Point.generate_all(cursor)
+    conn.commit()
+    PointOnRoute.generate_all(cursor)
+    conn.commit()
 
-    # Route.generate_all(cursor)
-    # Point.generate_all(cursor)
-    # PointOnRoute.generate_all(cursor)
+    Account.generate_all(cursor)
+    conn.commit()
+    User.generate_all(cursor)
 
-    # Account.generate_all(cursor)
-    # User.generate_all(cursor)
+    conn.commit()
+    FlightSchedule.generate_all(cursor)
+    conn.commit()
+    Flight.generate_all(cursor)
+    conn.commit()
 
-    # FlightSchedule.generate_all(cursor)
-    # Flight.generate_all(cursor)
+    Flaw.generate_all(cursor)
+    conn.commit()
 
-    # Object.generate_all(cursor)
+    Object.generate_all(cursor)
+    conn.commit()
 
 
 if __name__ == "__main__":
@@ -43,5 +56,6 @@ if __name__ == "__main__":
         os.remove(SCRIPT_FILENAME)
     # drop_database(cursor)
     generate()
+    conn.commit()
     conn.close()
 

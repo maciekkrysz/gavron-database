@@ -3,9 +3,9 @@ import random
 import values
 
 
-class Drone(cursor):
+class Drone():
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         data = open("drone.txt", 'r').read().split(',')
         data.pop()
 
@@ -13,4 +13,4 @@ class Drone(cursor):
         for _ in range(values.DRONE_LEN):
             listOfList.append([data[random.randrange(0, len(data))]])
 
-        sql_file_utils.addToFile("drone", ["Model"], listOfList)
+        sql_file_utils.addToFile(cursor, "drone", ["Model"], listOfList)

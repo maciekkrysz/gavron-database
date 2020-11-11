@@ -18,7 +18,7 @@ class User(SqlDataClass):
         self.__role = random.randint(1, ROLE_LEN)
 
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
 
         instance = User()
@@ -30,4 +30,4 @@ class User(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("user", ["IdAccount", "IdRole"], values)
+        addToFile(cursor, "user", ["IdAccount", "IdRole"], values)

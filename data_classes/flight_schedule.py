@@ -39,5 +39,5 @@ class FlightSchedule(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("flightschedule", [
-                  "IdUser", "IdRoute", "StartDate", "StartMinute", "Interval_"], values)
+        addToFile(cursor, "flightschedule", [
+            "IdUser", "IdRoute", "StartDate", "StartMinute", "Interval_"], values)

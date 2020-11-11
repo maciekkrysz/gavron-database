@@ -13,5 +13,6 @@ class ObjectType():
             listOfList.append([row])
 
         values.OBJECTTYPE_LEN = len(data)
-        s = sql_file_utils.addToFile("objecttype", ["Name"], listOfList)
-        return s
+        sql_file_utils.addToFile(cursor,
+                                 "objecttype", ["Name"], listOfList, ignore=True)
+        # print(s)

@@ -33,4 +33,4 @@ class Flaw(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("flaw", ["IdUser", "IdFlight", "IdDrone", "Description"], values)
+        addToFile(cursor, "flaw", ["IdUser", "IdFlight", "IdDrone", "Description"], values)

@@ -5,6 +5,7 @@ from values import ROUTE_LEN
 
 import random
 
+
 class Route(SqlDataClass):
 
     __description = ""
@@ -16,9 +17,8 @@ class Route(SqlDataClass):
         length = random.randint(10, 50)
         self.__description = rand_string(length)
 
-
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         values = []
 
         instance = Route()
@@ -27,5 +27,4 @@ class Route(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("route", ["Description"], values)
-
+        addToFile(cursor, "route", ["Description"], values)

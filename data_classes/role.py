@@ -4,10 +4,9 @@ from utilities.sql_file_utils import addToFile
 from values import *
 
 
-
 class Role():
     @staticmethod
-    def generate_all():
+    def generate_all(cursor):
         data = open("Role.txt", 'r').read().split(',')
         data.pop()
 
@@ -17,4 +16,4 @@ class Role():
             listOfList.append([row])
 
         ROLE_LEN = len(data)
-        addToFile("role", ["NameRole"], listOfList)
+        addToFile(cursor, "role", ["NameRole"], listOfList, ignore=True)

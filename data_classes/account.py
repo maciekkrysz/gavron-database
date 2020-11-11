@@ -31,4 +31,4 @@ class Account(SqlDataClass):
             sql_string = instance.generate_sql()
             values.append(sql_string)
 
-        addToFile("account", ["Login", "Password"], values)
+        addToFile(cursor, "account", ["Login", "Password"], values)
