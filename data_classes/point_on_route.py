@@ -1,7 +1,8 @@
 from data_classes.sql_abstract_class import SqlDataClass
 from utilities.generator_utils import rand_string
 from utilities.sql_file_utils import addToFile
-from values import ROUTE_LEN, POINT_LEN
+from utilities.db_conn_utilities import get_all_index
+from values import ROUTE_LEN, POINT_LEN, POINT_ON_ROUTE
 
 import random
 
@@ -15,30 +16,32 @@ class PointOnRoute(SqlDataClass):
     def generate_sql(self) -> str:
         return [self.__id_route, self.__id_point, self.__order]
 
-    def generate_instance(self):
-        self.__id_point = random.randint(1, POINT_LEN)
+    def generate_instance(self, route, point_indexes, order):
+        self.__order = order
 
     @staticmethod
     def generate_all(cursor):
         values = []
 
+        point_indexes = get_all_index(cursor, 'point')
+        route_indexes = get_all_index(cursor, 'route')
+        routes_added = sorted(route_indexes)[-ROUTE_LEN::]
+
         instance = PointOnRoute()
 
-        for i in range(1, ROUTE_LEN):
-            route_length = random.randint(3, 10)
+        for route in routes_added:
+            route_length = random.randint(0.8 * POINT_ON_ROUTE, POINT_ON_ROUTE)
             instance.__order = 0
-            instance.__id_route = i
+            instance.__id_route = route
 
-            curr_route = []
-            for _ in range(1, route_length):
-                instance.__id_point = random.randint(1, POINT_LEN)
+            for _ in range(route_length):
+                random_point = random.randint(0, len(point_indexes) - 1)
+                instance.__id_point = point_indexes[random_point]
 
                 sql_string = instance.generate_sql()
                 values.append(sql_string)
 
-                curr_route.append(instance.__id_point)
-                instance.__order = instance.__order + 1
+                instance.__order += 1
 
-            instance.__id_route = instance.__id_route + 1
         addToFile(cursor, "pointonroute", [
                   "IdRoute", "IdPoint", "Order_"], values)

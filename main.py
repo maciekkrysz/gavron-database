@@ -15,7 +15,7 @@ from data_classes.object import Object
 
 from utilities.db_connection import conn, cursor
 from utilities.db_conn_utilities import drop_database, get_all_index
-from values import SCRIPT_FILENAME
+from values import SCRIPT_FILENAME, RESET, xd
 import os
 
 
@@ -26,7 +26,7 @@ def generate():
     Role.generate_all(cursor)
     Route.generate_all(cursor)
     Point.generate_all(cursor)
-    # PointOnRoute.generate_all(cursor)
+    PointOnRoute.generate_all(cursor)
 
     Account.generate_all(cursor)
     User.generate_all(cursor)
@@ -40,9 +40,6 @@ def generate():
 
 
 if __name__ == "__main__":
-    if os.path.exists(SCRIPT_FILENAME):
-        os.remove(SCRIPT_FILENAME)
-    # drop_database(cursor)
     generate()
     conn.commit()
     conn.close()
