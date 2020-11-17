@@ -15,7 +15,7 @@ from data_classes.object import Object
 
 from utilities.db_connection import conn, cursor
 from utilities.db_conn_utilities import drop_database, get_all_index
-from values import SCRIPT_FILENAME, RESET, xd
+from values import SCRIPT_FILENAME
 import os
 
 
